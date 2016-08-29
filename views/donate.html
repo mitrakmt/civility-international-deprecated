@@ -1,0 +1,30 @@
+<!-- Donate -->
+
+<!-- Need to implement https://www.airpair.com/javascript/integrating-stripe-into-angular-app -->
+<div class="background-image">
+  <ul class="navbar nav forum-nav-items" layout="row">
+    <li><a md-no-ink class="md-primary" ng-href="#/home">Home</a></li>
+    <li><a data-toggle="modal" ng-show="signedIn()"  md-no-ink data-target="#posModal" class="md-primary" ng-href="#/forum">Post a thread</a></li>
+  </ul>
+  <h2 class="section-paragraph"><strong>Donate</strong></h2>
+    <p class="mission-paragraph md-headline">We sincerely thank you for your generosity. All donations go directly into helping our chapters grow and succeed in spreading civility and changing campus culture as we know it.</p>
+  <br><br>
+  <md-card class="donation-card" layout-margin>
+    <br>
+    <form stripe-form="stripeCallback" name="checkoutForm">
+      <input ng-model="number" placeholder="Card Number"
+               payments-format="card" payments-validate="card" name="card" />
+      <input ng-model="expiry" placeholder="Expiration"
+               payments-format="expiry" payments-validate="expiry"
+               name="expiry" />
+      <input ng-model="cvc" placeholder="CVC" payments-format="cvc" payments-validate="cvc" name="cvc" />
+      <md-button class="md-raised" type="submit">Submit</md-button>
+      <br>
+      <p class="small-text">This payment is done securely through Stripe and none of your data will be stored.</p>
+    </form>
+  </md-card>
+
+  <br><br><br><br>
+
+  <div ng-include="'views/footer.html'"></div>
+</div>

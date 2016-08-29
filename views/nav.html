@@ -1,0 +1,62 @@
+<nav class="navbar brand-color" ng-controller="NavController">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+    </div>
+
+    <div class="collapse navbar-collapse" layout="row" id="navigation-collapse">
+      <ul class="nav navbar-nav">
+        <h1>Civility International</h1>
+      </ul>
+
+      <div class="nav navbar-nav navbar-center">
+        <img src="images/CIlogo.png" class="logo-thumb" />
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ng-hide="signedIn()" class="nav-font" md-no-ink class="md-primary" ng-href="#/login">Login</a></li>
+        <li><a ng-hide="signedIn()" md-no-ink class="md-primary" class="nav-font" ng-href="#/register">Sign Up</a></li>
+        <div ng-show="signedIn()" style="text-align: center;" class="user-profile-in-navbar">
+          <button class="md-button brand-color dropdown-toggle name-in-navbar" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+
+            <img ng-src="{{currentUser.profile.gravatar}}" class="img-circle gravatar">
+            &nbsp;
+            {{currentUser.profile.name}}
+            <span class="mdi-navigation-expand-more"></span>
+          </button>
+
+          <ul class="dropdown-menu ddmenu" aria-labelledby="dropdownMenu1">
+            <li>
+              <md-button ng-href="#/profile" md-menu-align-target class="ddmenu">
+                <i class="glyphicon glyphicon-user"> Profile</i>
+              </md-button>
+            </li>
+            <div class="list-group-separator"></div>
+            <li>
+              <md-button ng-href="" data-toggle="modal" data-target="#pasModal" class="ddmenu">
+                <i class="glyphicon glyphicon-lock"> Change Password</i>
+              </md-button>
+            </li>
+            <div class="list-group-separator"></div>
+            <li>
+              <md-button ng-href="" ng-click="logout()" class="ddmenu">
+                <i class="glyphicon glyphicon-log-out"> Logout</i>
+              </md-button>
+            </li>
+          </ul>
+
+        </ul>
+      </div>
+    </div>
+
+    <div ng-show="signedIn()" ng-include="'views/partials/changepass.html'"></div>
+    <div ng-show="signedIn()" ng-include="'views/partials/post.html'"></div>
+
+  </nav>

@@ -1,0 +1,168 @@
+
+<div class="background-image">
+	<ul class="navbar nav forum-nav-items" layout="row">
+		<li><a md-no-ink class="md-primary" ng-href="#/home">Home</a></li>
+		<li><a data-toggle="modal" ng-show="signedIn()"  md-no-ink data-target="#posModal" class="md-primary" ng-href="#/forum">Post a thread</a></li>
+	</ul>
+
+	<!-- Left Panel -->
+	<div class="col-md-offset-1 col-md-4">
+
+		<div class="list-group">
+			<br>
+			<br>
+				<!-- Search -->
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-addon">
+							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+						</div>
+						<md-input-container class="md-block">
+			      	<input type="text" ng-model="searchPost" class="form-control" placeholder="Search">
+						</md-input-container>
+			    </div>
+				</div>
+
+				<!-- Post List -->
+				<a ng-repeat="post in posts | filter: {title: searchPost , status: '!deleted' || '!closed'} | orderBy: 'datetime':true" ng-href="#/forum/{{post.$id}}">
+					<div class="list-group-item">
+						<br>
+							<md-card>
+								<md-content class="post-card">
+					        <md-content class="row-picture">
+					          <img class="circle" ng-src="{{post.gravatar}}">
+					        </md-content>
+					        <md-content class="row-content">
+				            <h4 class="post-card-heading"><strong>{{post.title | limitTo:25}}{{ post.title.length > 25? "..." : ""}}</strong></h4>
+				            <md-content class="post-card-text">
+											<span class="post-card-text">{{post.description | limitTo:105}}{{ post.description.length > 105? "..." : ""}}</span>
+										</md-content>
+									</md-content>
+								</md-content>
+							</md-card>
+		    	</a>
+				</div>
+		</div>
+
+	</div>
+
+	<!-- Right Panel -->
+	<div class="col-md-6 right-panel" style="margin-right:-20px;">
+		<br>
+		<br>
+		<div ng-show="listMode">
+
+		</div>
+
+		<div ng-show="!listMode">
+
+			<!-- Header -->
+			<div class="row">
+				<div class="col-md-8">
+					<h3><strong>{{ selectedPost.title }}</strong></h3>
+
+					<span>
+						<img ng-src="{{ selectedPost.gravatar }}" class="img-circle gravatar">
+						Posted by {{ selectedPost.name }} -
+						<span am-time-ago="selectedPost.datetime"></span>&nbsp;
+					</span>
+				</div>
+
+				<div class="col-md-4 title">
+
+					<div ng-show="isPostCreator(selectedPost) && isOpen(selectedPost)">
+            <md-button class="md-raised brand-color dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Admin
+            </md-button>
+            <ul class="dropdown-menu ddmenu" aria-labelledby="dropdownMenu2">
+              <li>
+                <md-button data-toggle="modal" data-target="#ediModal">
+                  Edit Post
+                </md-button>
+							</li>
+							<li>
+								<md-button ng-click = "replacePost(selectedPost.$id)" data-toggle="modal" data-target="#conModal">
+									Delete Post
+								</md-button>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+
+			<br>
+
+			<!-- Description -->
+			<div class="row">
+				<div class="col-md-12">
+						<md-card class="panel-info">
+					    <div class="panel-heading brand-color">
+					        <h3 class="panel-title">Post Description</h3>
+					    	</div>
+					    <div class="panel-body">
+					        {{ selectedPost.description }}
+					    </div>
+						</md-card>
+				</div>
+			</div>
+
+    <!-- Comments -->
+    <div class="row">
+      <div class="col-md-12">
+				<md-card class="panel-info">
+						<div class="panel-heading brand-color">
+								<h3 class="panel-title">Comments</h3>
+            </div>
+
+            <div class="panel-body">
+              <div class="title" ng-hide="comments && comments.length > 0">
+                <span>No comments yet. Chime in!</span>
+              </div><br>
+
+              <div class="row" ng-repeat="com in comments">
+                <div class="col-md-1">
+                  <img ng-src="{{com.gravatar}}" class="img-circle comment gravatar">
+                </div>
+                <div class="col-md-11">
+                  <div class="well well-sm cmt">
+                    <span class="cmt-title">{{com.name}}:</span>
+                    <span class="cmt-time pull-right"><span am-time-ago="com.datetime"></span></span><br>
+
+                    <span>{{com.content}}</span>
+                  </div>
+                </div>
+              </div><br>
+
+              <div class="row" ng-show="isOpen(selectedPost)">
+                <div class="col-md-12">
+                  <form ng-submit="addComment()">
+
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                        <img ng-src="{{ user.profile.gravatar }}" class="img-circle comment gravatar">
+                      </div>
+											<md-input-container class="md-block">
+                      	<input type="text" ng-model="content" cols="10" rows="3" class="form-control" placeholder="Comment here..." required><br>
+											</md-input-container>
+										</div>
+
+                    <span class="pull-right comment">
+                      <md-button type="submit" class="md-warn md-raised submit-button" value="Comment">Comment</md-button>
+										</span>
+                  </form>
+                </div>
+              </div>
+
+            </div>
+					</md-card>
+					<br>
+        </div>
+      </div>
+
+</div>
+
+</div>
+
+<div ng-include="'views/partials/edit.html'"></div>
+<div ng-include="'views/partials/confirmCancel.html'"></div>

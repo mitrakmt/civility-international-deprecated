@@ -1,0 +1,184 @@
+<div class="sample tabsdemoDynamicTabs main-page" layout="column" ng-cloak="">
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom="" md-autoselect="">
+
+      <md-tab label="Home">
+        <md-content class="background-image">
+
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+                  <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                  <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                  <div class="item">
+                    <img class="first-slide" src="images/carousel-images/pic3.jpg" alt="First slide">
+                    <div class="container">
+                      <div class="carousel-caption">
+                        <h1 class="md-display-3">New Project Civility fosters kindness, positivity at Talawanda High School</h1>
+                        <p class="md-subhead">High school can be a tough place. That's why students at Talawanda are fostering kindness, positivity with Project Civility. Members of the school’s Youth Initiative Team recently signed on as an affiliate chapter of Project Civility, an organization that encourages positive behaviors. <a href="http://www.wcpo.com/news/insider/new-project-civility-fosters-kindness-positivity-at-talawanda-high-school">Read more..</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img class="second-slide" src="images/carousel-images/pic3.jpg" alt="Second slide">
+                    <div class="container">
+                      <div class="carousel-caption">
+                        <h1 class="md-display-3">Project Civility for change</h1>
+                        <p class="md-subhead">With the vandalism that took place in Wells Hall on March 4, Project Civility, a subcommittee under the Student Government Association (SGA) of the regional campuses, is working to promote courtesy and respect within the Miami community.<a href="http://miamistudent.net/?p=17005311">Read more..</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item active">
+                    <img class="third-slide" src="images/carousel-images/pic3.jpg" alt="Third slide">
+                    <div class="container">
+                      <div class="carousel-caption">
+                        <h1 class="md-display-3">Hamilton set to become ‘City of Character’</h1>
+                        <p class="md-subhead"> Inspired by the success of Project Civility at Miami and the Hamilton City School District in becoming a national “District of Character,” a group of citizens have banded together to make Hamilton a “City of Character.” Led by Mayor Pat Moeller, the group includes representatives from local service organizations, the school district, the Chamber of Commerce and Miami University Hamilton, the mayor said, as well as several residents.<a href="http://www.journal-news.com/news/news/hamilton-set-to-become-city-of-character/nbJYy/">Read more..</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+
+          <br><br><br>
+
+          <!-- Welcome -->
+          <div class="welcome-paragraph" layout="row" layout-xs="column" layout-align="center" layout-margin layout-padding>
+            <div class="large-logo-section" flex>
+              <img src="images/CIlogo.png" class="logo-large" />
+            </div>
+            <div class="landing-text-section" layout-align="center" flex>
+              <h3 class="md-headline title"><strong>Who we are</strong></h3><br>
+              <p class="section-paragraph md-headline">This is the home of more than 15 Project Civility Chapters across the nation. From top-quality resources, brand products, strategy consulting and more, we provide each chapter with the necessary tools to thrive and make real change in their community.
+              <br><br>Want to bring Project Civility to your school? <a href="#/about">Learn more</a> or <a ng-href="#/register">sign up</a> for free!</p>
+            </div>
+          </div>
+
+          <div ng-include="'views/footer.html'"></div>
+        </md-content>
+      </md-tab>
+
+      <!-- Schools Section -->
+      <md-tab label="Schools">
+        <md-content class="md-padding background-image">
+          <h1 class="md-display-2 section-title">Our Chapters</h1>
+
+          <!-- Search -->
+          <br>
+  				<div class="form-bar search-bar" layout-margin>
+  					<div class="input-group">
+  						<div class="input-group-addon">
+  							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+  						</div>
+  						<md-input-container class="md-block">
+  			      	<input type="text" ng-model="searchChapter" class="form-control" placeholder="Search">
+  						</md-input-container>
+  			    </div>
+  				</div>
+
+          <!-- Chapters Section -->
+
+          <div ng-repeat="chapter in chapters | filter: {name: searchChapter}" layout-align="center center" layout-margin layout-padding>
+            <md-card layout="row" class="school-card" layout-xs="column">
+              <img ng-src="{{chapter.imageUrl}}" class="spinner school-picture" imageonload/>
+              <span class="loading" flex> <img src="https://www.yugma.com/images/loading-animation-7.gif"/></span>
+              <div layout="column" layout-margin layout-padding flex>
+                <p class="md-display-5 school-font-name"><a ng-href="{{chapter.url}}" target="_blank">{{chapter.name}}</a></p>
+                <p class="md-display-7 school-font-name">Chapter Head: <a ng-href="" >{{chapter.adminName}}</a></p>
+                <p class="md-display-7 school-font-name">Members: {{chapter.members}}</p>
+              </div>
+            </md-card>
+          </div>
+          <br><h3 ng-hide="signedIn()" class="md-display-5 md-title">Bring Project Civility to your school <a ng-href="#/register">NOW!</a></h3>
+          <div ng-include="'views/footer.html'"></div>
+        </md-content>
+      </md-tab>
+
+      <!-- Articles Section -->
+      <md-tab label="Articles">
+        <md-content class="md-padding background-image">
+          <h1 class="md-display-2 section-title">Articles</h1>
+          <div ng-repeat="article in articles" layout="row" layout-padding layout-margin>
+            <md-card class="article-card" flex>
+              <h3 class="md-title"><strong> <a ng-href="{{article.url}}" target="_blank">{{article.title}}</a> </strong></h3>
+              <p><strong>Date: </strong>{{article.date}} </p><br>
+              <md-divider></md-divider><br>
+              <p><strong></strong> {{article.exampleText}} </p><br>
+            </md-card>
+          </div>
+          <div ng-include="'views/footer.html'"></div>
+        </md-content>
+      </md-tab>
+
+      <md-tab label="My Chapter" ng-disabled="!signedIn()">
+        <md-content class="md-padding background-image">
+
+          <div ng-include="'views/footer.html'"></div>
+        </md-content>
+      </md-tab>
+
+      <md-tab label="Forum" ng-disabled="!signedIn()">
+        <md-content class="md-padding background-image">
+          <br><br><br><br><br><br><br><br><br><br>
+          <h1 class="md-display-2 title"><a md-no-ink ng-href="#/forum">Enter the forum, now! :)</a></h1>
+          <br><br><br><br><br><br><br><br><br><br>
+        </md-content>
+      </md-tab>
+
+      <md-tab label="Consulting" ng-disabled="signedIn()">
+        <md-content class="md-padding background-image">
+          <h1 class="md-display-2 section-title">Strategy Consulting</h1><br><br><br>
+          <p class="section-paragraph md-headline">We're here to help you optimize your chapter for growth and success. Trying to plan events, expand your chapter, or have any questions? Let us know below.</p>
+          <p class="small-text section-paragraph">We allocate two free consultings per chapter a year</p>
+
+          <br><br>
+
+          <!-- Create form for submitance to us -->
+            <md-card class="auth-forms title">
+              <br>
+              <h2>Get in Touch</h2>
+              <form name="contact" ng-submit="">
+
+                  <md-input-container class="md-block" flex-gt-sm>
+                    <label>Subject</label>
+                    <input required type="text" name="subject">
+                  </md-input-container>
+                  <md-input-container class="md-block" flex-gt-sm>
+                    <label>Body</label>
+                    <input required type="text">
+                  </md-input-container>
+                  <md-input-container class="md-block" flex-gt-sm>
+                    <label>Available Dates & Times</label>
+                    <input required type="text">
+                  </md-input-container>
+
+                <md-button type="submit" class="md-raised md-primary">Submit</md-button>
+              </form>
+              <br>
+            </md-card>
+            <br><br>
+          <div ng-include="'views/footer.html'"></div>
+        </md-content>
+      </md-tab>
+
+      <md-tab label="Resources" ng-disabled="!signedIn()">
+        <md-content class="md-padding background-image">
+
+          <div ng-include="'views/footer.html'"></div>
+        </md-content>
+      </md-tab>
+
+    </md-tabs>
+  </md-content>
+</div>

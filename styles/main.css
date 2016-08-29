@@ -1,0 +1,519 @@
+/* General */
+
+body {
+  background-color: #FAFAFA !important;
+}
+
+.section-title {
+  border-bottom: 1.5px solid #3B5998;
+  margin-top: 0;
+  text-align: center;
+}
+
+.section-paragraph {
+  text-align: center;
+}
+
+.get-started-button {
+  margin: 0px;
+  margin-top: -7px;
+}
+
+.search-bar {
+  width: 60%;
+  margin: auto;
+}
+
+.logo-thumb {
+  height: 90px;
+  margin-top: -15px;
+}
+
+.logo-large {
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.large-logo-section {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.landing-text-section {
+  margin-right: 100px !important;
+  margin-top: 40px !important;
+}
+
+.background-image {
+  background: url("images/mup.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+md-content {
+  overflow: hidden;
+}
+
+.mission-paragraph {
+  margin: 5%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  line-height: 2.0;
+  text-align: center;
+}
+
+.vertical-picture {
+  height: 100%;
+  width: 100%;
+  max-height: 500px;
+}
+
+.horizontal-picture {
+  height: 100%;
+  width: 100%;
+}
+
+.small-text {
+  font-size: 10px;
+}
+
+.info-cards {
+  margin: 75px;
+}
+
+.md-title {
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  margin: auto;
+  top: 20%;
+}
+
+.md-tab {
+  color: white !important;
+}
+
+.main-page {
+  min-height: 100%;
+  background-color: #FAFAFA !important;
+}
+
+
+md-tabs-canvas {
+  background-color: #2B3636;
+}
+
+/* Chapters Page */
+
+.school-picture {
+  height: 200px;
+  width: 250px;
+}
+
+.school-card {
+  width: 75% !important;
+  margin: auto;
+}
+
+.school-font-name {
+  font-size: 20px;
+  margin-top: 3px;
+}
+
+.school-font-members {
+  font-size: 20px;
+}
+
+/* Article Cards */
+.article-card {
+  text-align: center;
+  width: 55% !important;
+  margin: auto;
+}
+
+.article-card p {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.title-label {
+  float: right;
+}
+
+.spinner-hide .loading{
+  visibility: visible;
+}
+.spinner-show .loading{
+  visibility: hidden;
+}
+
+a {
+  color: #3B5998 !important;
+}
+
+md-card {
+  box-shadow: 0 1px 3px 0 #2B3636,0 1px 1px 0 #2B3636,0 2px 1px -1px #2B3636;
+}
+
+md-divider {
+  border-color: #2B3636;
+}
+
+/* Footer */
+
+.footer {
+  padding-top: 5px;
+  text-align: center;
+  background: transparent;
+  width: 100%;
+  opacity: 1;
+}
+
+.icons {
+  decoration: none;
+  padding: 0.3em;
+}
+
+.instagram-icon {
+  width: 95%;
+  margin-top: 2px;
+}
+
+.md-button {
+  padding-top: 4px;
+}
+
+.md-button.md-fab.md-mini {
+    line-height: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.footer-text {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+/* Form */
+
+.auth-forms {
+  max-width:400px;
+  margin:0 auto;
+  padding:1px 25px 25px 25px;
+}
+
+/* Profile */
+
+.img-circle.gravatar {
+  width: 30px;
+  margin-right: 5px;
+}
+
+.img-circle.profile-gravatar {
+  width: 60px;
+  height: auto;
+  margin-right: 15px;
+  margin-left: 20px;
+}
+
+.ddmenu li {
+  width: 100%;
+  box-shadow: none;
+}
+
+.ddmenu li .md-button:hover {
+  background-color: transparent;
+  color: #3F51B5;
+}
+
+
+/* Forum */
+
+.panel-title {
+  font-weight: bold;
+}
+
+.img-forum {
+  padding-top: 30px;
+}
+
+.panel-success > .panel-heading .badge {
+  color: #81C784;
+  background-color: #FFFFFF;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.panel-info > .panel-heading {
+  background-color: #2B3636;
+}
+
+.panel-warning > .panel-heading .badge {
+  background-color: #FFFFFF;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.partial {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* List */
+
+.list-group-item {
+  margin-top: -20px;
+}
+
+.list-group .list-group-item .row-picture img {
+  width: 50px;
+  height: 50px;
+}
+
+.post-card {
+  padding: 12px;
+}
+
+/* Comments */
+
+.well.well-sm.cmt {
+  color: #5E5E5E;
+  font-size: 14px;
+}
+
+.cmt-title {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.cmt-time {
+  font-size: 12px;
+}
+
+.img-circle.comment.gravatar {
+  width: 35px;
+  margin-right: 5px;
+}
+
+.post-card:hover {
+  transition: all .2s cubic-bezier(.55, 0, .55, .2);
+  -webkit-box-shadow: #3c3Da5 0px 2px 10px 0px;
+}
+
+/* Nav Bar */
+
+.navbar {
+  margin-bottom: 0px;
+  background-color: #2B3636;
+  z-index: 100;
+  width: 100%;
+  opacity: 1;
+  color: white;
+}
+
+.nav > li > a:hover {
+  background-color: transparent;
+}
+
+.ddmenu li {
+  width: 100%;
+  box-shadow: none;
+}
+
+.ddmenu li .md-button:hover {
+  background-color: transparent;
+  color: #2B3636;
+}
+
+.forum-nav-items {
+  padding-left: 17px;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: transparent;
+}
+
+.submit-button {
+  background-color: #A62573 !important;
+}
+
+.forum-nav-items li a {
+  color: black !important;
+  font-weight: bold;
+}
+
+.navbar .navbar-nav > li > a {
+  padding-top: 25px;
+  color: white !important;
+}
+
+.nav-font {
+  color: white !important;
+}
+
+/* Donate */
+
+.donation-card {
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+}
+
+.ng-invalid {
+    color: red;
+}
+
+/* Team Cards */
+
+.cardWrapper{
+  width:250px;
+  height:450px;
+  position:relative;
+  float:left;
+  cursor:pointer;
+  -webkit-font-smoothing:antialiased;
+  margin-top: 10px;
+  margin-bottom: 35px;
+}
+
+.cardFace{
+  position:absolute;
+  width:250px;
+  height:450px;
+  overflow:hidden;
+}
+
+.front{
+  background-color: white;
+  border: solid 1px gray;
+  box-shadow: 0 1px 1px 0 #2d2d2e;
+}
+
+.back{
+  background-color: white;
+  border: solid 1px gray;
+  text-align: center;
+  box-shadow: 0 1px 1px 0 #2d2d2e;
+}
+
+.team-cover img {
+  top: 0;
+  width: 250px;
+  height: 200px;
+  margin: 0;
+}
+
+.cardFace h1 {
+  margin: 0px;
+  font-size: 22px;
+  margin-top: 50px;
+  text-align: center;
+  padding: 10px 10px 10px 10px;
+  background-color: #090707;
+  color: #0095FC;
+}
+
+.cardFace h3 {
+  margin: 0px;
+  font-size: 15px;
+  text-align: center;
+  top: 0px;
+  padding: 10px 10px 10px 10px;
+  background-color: #090707;
+  color: white;
+}
+
+.team-title {
+  font-size: 15px;
+}
+
+.cardFace.back h1{
+  margin: 0px;
+  font-size: 22px;
+  text-align: center;
+  top: 0;
+  padding: 10px 10px 10px 10px;
+  background-color: #090707;
+  color: white;
+}
+
+.team-background {
+  background-color: transparent;
+}
+
+.team-card-quote {
+  font-size: 24px;
+  color: #0095FC;
+  margin: 15px;
+  margin-top: 40px;
+}
+
+.card-footer-mitrakos {
+  bottom: 0;
+  padding: 10px 10px 10px 10px;
+  border-top: solid 1px gray;
+  margin-top: 35px;
+}
+
+.card-footer-shan {
+  bottom: 0;
+  padding: 10px 10px 10px 10px;
+  border-top: solid 1px gray;
+  margin-top: 80px;
+}
+
+.card-footer-shar {
+  bottom: 0;
+  padding: 10px 10px 10px 10px;
+  border-top: solid 1px gray;
+  margin-top: 85px;
+}
+
+.user {
+    border-radius: 50%;
+    display: block;
+    height: 130px;
+    margin: -55px auto 20px;
+    overflow: hidden;
+    width: 130px;
+}
+.user img {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 4px solid #FFFFFF;
+    width: 100%;
+}
+
+.social-links > a {
+  font-size: 20px;
+  color: #0095FC !important;
+}
+
+.moreInfo{
+  padding:10px;
+  text-align: center;
+  color: #090707;
+  line-height:24px;
+  font-size: 15px;
+}
+
+#slides_control > div {
+  height: 200px;
+}
+
+.carousel-image {
+  margin:auto;
+  width: 400px;
+}
+
+#slides_control {
+  position:absolute;
+  width: 400px;
+  left:50%;
+  top:20px;
+  margin-left:-200px;
+}

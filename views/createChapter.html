@@ -1,0 +1,40 @@
+<div class="background-image">
+  <ul class="navbar nav forum-nav-items" layout="row">
+    <li><a md-no-ink class="md-primary" ng-href="#/home">Home</a></li>
+  </ul>
+  <div class="auth-forms title">
+    <h2>Register</h2>
+    <!-- Need to create register(chapter) in service and controller -->
+    <form name="registerForm" ng-submit="register(chapter)">
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Chapter Name</label>
+          <input type="name" name="name" ng-model="chapter.name" required>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Chapter Address</label>
+          <input type="name" name="address" ng-model="chapter.address" required>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <!-- Need to make this like datepicker -->
+          <label>Founded Date</label>
+          <input type="text" name="founded" ng-model="chapter.foundedDate" required>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Admin Phone Number</label>
+          <input type="text" name="phone" ng-model="chapter.adminPhone" required>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Admin Email Address</label>
+          <input required type="email" name="emailAddress" ng-model="chapter.adminEmail" ng-pattern="/^.+@.+\..+$/">
+          <div ng-messages="registerForm.email.$error" role="alert">
+           <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+             Enter an email address, such as <strong>yourName@gmail.com</strong>.
+           </div>
+         </div>
+        </md-input-container>
+
+      <md-button type="submit" class="md-raised md-primary">Register Chapter</md-button>
+    </form>
+  </div>
+</div>

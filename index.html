@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Civility International</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.9/toaster.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/css/material.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/css/ripples.css" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/main.css">
+
+  </head>
+  <body ng-app="PCApp">
+
+    <toaster-container toaster-options="{'time-out': 3000, 'close-button':true}"></toaster-container>
+    <div ng-include="'views/nav.html'"></div>
+
+    <div>
+        <div ng-view=""></div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.js"></script>
+
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-resource.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-aria.min.js"></script>
+
+    <!-- Firebase / AngularFire -->
+    <script src="https://cdn.firebase.com/js/client/2.1.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.9.1/angularfire.min.js"></script>
+
+    <!-- Toaster -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.9/toaster.js"></script>
+
+    <!-- Moment JS -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.11.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/0.9.0/angular-moment.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.0/angular-material-icons.min.js"></script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
+
+    <script>
+        angular.module('PCApp', ['ngMaterial']);
+    </script>
+
+    <!-- Stripe for donations -->
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript">
+      Stripe.setPublishableKey('pk_test_afhG0i1ZbD7Ux2arUN2vcaT5');
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBilW1ntG8wUvMMzAhifNDgx_6Xp9P4UAE",
+        authDomain: "project-6062039870921191651.firebaseapp.com",
+        databaseURL: "https://project-6062039870921191651.firebaseio.com",
+        storageBucket: "project-6062039870921191651.appspot.com",
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <script src="scripts/app.js"></script>
+
+    <script src="scripts/controllers/nav.js"></script>
+    <script src="scripts/controllers/auth.js"></script>
+    <script src="scripts/controllers/home.js"></script>
+    <script src="scripts/controllers/post.js"></script>
+    <script src="scripts/controllers/forum.js"></script>
+    <script src="scripts/controllers/profile.js"></script>
+    <script src="scripts/controllers/agenda.js"></script>
+
+    <script src="scripts/services/auth.js"></script>
+    <script src="scripts/services/post.js"></script>
+    <script src="scripts/services/comment.js"></script>
+    <script src="scripts/services/profile.js"></script>
+
+		<script src="scripts/directives/agendaFocus.js"></script>
+		<script src="scripts/directives/agendaBlur.js"></script>
+		<script src="scripts/directives/agendaEscape.js"></script>
+
+</body>
+</html>

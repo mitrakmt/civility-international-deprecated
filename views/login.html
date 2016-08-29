@@ -1,0 +1,30 @@
+<div class="background-image">
+  <ul class="navbar nav forum-nav-items" layout="row">
+    <li><a md-no-ink class="md-primary" ng-href="#/home">Home</a></li>
+  </ul>
+  <div class="auth-forms title">
+    <br>
+    <h2>Login</h2>
+    <br>
+    <form name="loginForm" ng-submit="login(user)">
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Email address</label>
+          <input required type="email" name="emailAddress" ng-model="user.email" ng-pattern="/^.+@.+\..+$/">
+          <div ng-messages="loginForm.email.$error" role="alert">
+           <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+             Enter an email address, such as <strong>yourName@gmail.com</strong>.
+           </div>
+         </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Password</label>
+          <input type="password" ng-model="user.password">
+        </md-input-container>
+
+      <md-button type="submit" class="md-raised md-primary">Login</md-button>
+    </form>
+    <br><br><br>
+  </div>
+  <div ng-include="'views/footer.html'"></div>
+</div>

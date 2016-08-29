@@ -1,0 +1,25 @@
+<div class="modal" ng-controller="PostController" id="posModal" layout-padding>
+  <div class="modal-dialog">
+    <div class="modal-content card">
+
+      <div layout-align="start center" layout="column" class="panel-title brand-color">
+        <h2 class="md-title">What would you like to post about?</h2>
+      </div>
+
+      <br>
+      <form class="autoScroll partial" ng-submit="createPost()">
+        <md-input-container class="md-icon-float md-block">
+          <label>Post Name</label>
+          <input type="text" ng-model="post.title" class="form-control" required>
+        </md-input-container>
+        <md-input-container md-no-float class="md-block">
+          <label>Post Description</label>
+          <textarea ng-model="post.description" row="3" class="form-control" required></textarea><br>
+        </md-input-container>
+        <input type="submit" value="Publish" class="md-button md-raised brand-color">
+      </form>
+      <br>
+
+    </div>
+  </div>
+</div>

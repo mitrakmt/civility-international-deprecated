@@ -1,0 +1,42 @@
+<div class="background-image">
+  <ul class="navbar nav forum-nav-items" layout="row">
+    <li><a md-no-ink class="md-primary" ng-href="#/home">Home</a></li>
+  </ul>
+  <div class="auth-forms title">
+    <h2>Register</h2>
+    <form name="registerForm" ng-submit="register(user)">
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Full Name</label>
+          <input type="name" name="name" ng-model="user.name" required>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Chapter Position</label>
+          <input type="text" name="position" ng-model="user.position" required>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>University</label>
+          <input type="text" name="university" ng-model="user.university" required>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Phone Number</label>
+          <input type="text" name="phone" ng-model="user.phone" required>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Email Address</label>
+          <input required type="email" name="emailAddress" ng-model="user.email" ng-pattern="/^.+@.+\..+$/">
+          <div ng-messages="registerForm.email.$error" role="alert">
+           <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+             Enter an email address, such as <strong>yourName@gmail.com</strong>.
+           </div>
+         </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Password</label>
+          <input ng-model="user.password">
+        </md-input-container>
+      <md-button type="submit" class="md-raised md-primary">Register</md-button>
+    </form>
+  </div>
+  <div ng-include="'views/footer.html'"></div>
+</div>
