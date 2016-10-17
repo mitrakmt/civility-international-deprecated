@@ -135,32 +135,11 @@ $scope.articles = [
       adminName: "Sandra"
     },
     {
-      name: "New Miami High School",
-      url: "https://www.facebook.com/MUProjectCivility",
-      imageUrl: "images/chapters/newMiami.jpg",
-      members: 13,
-      adminName: "Jessica Hail"
-    },
-    {
       name: "Talawanda High School",
       url: "http://hotdot.pro/en/404/",
       imageUrl: "images/chapters/talawanda.jpg",
       members: 13,
       adminName: "Gabe Jackson"
-    },
-    {
-      name: "University of Florida",
-      url: "http://hotdot.pro/en/404/",
-      imageUrl: "images/chapters/uofflorida.jpg",
-      members: 12,
-      adminName: "Ben Briskan"
-    },
-    {
-      name: "University of Dayton",
-      url: "http://hotdot.pro/en/404/",
-      imageUrl: "images/chapters/uofdayton.jpg",
-      members: 8,
-      adminName: "Michael Mitrakos"
     }
   ]
 
