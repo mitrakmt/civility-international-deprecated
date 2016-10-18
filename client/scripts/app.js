@@ -1,23 +1,21 @@
-'use strict';
+'use strict'
 
-var app = angular
+let app = angular
   .module('PCApp', [
     'ngAnimate',
     'ngResource',
     'ngRoute',
-    'firebase',
     'toaster',
     'angularMoment',
     'ngMaterial',
     'ngMdIcons'
   ])
-  .constant('FURL', 'https://project-6062039870921191651.firebaseio.com')
-  .run(function($rootScope, $location) {
-    $rootScope.$on("$routeChangeError", function(event, next, previous, error) {
-      if (error === "AUTH_REQUIRED") {
-        $location.path("/login");
+  .run(function ($rootScope, $location) {
+    $rootScope.$on('$routeChangeError', function (event, next, previous, error) {
+      if (error === 'AUTH_REQUIRED') {
+        $location.path('/login')
       }
-    });
+    })
   })
   .config(function ($routeProvider) {
     $routeProvider
@@ -77,12 +75,12 @@ var app = angular
         templateUrl: 'views/profile.html',
         controller: 'ProfileController',
         resolve: {
-          currentAuth: function(Auth) {
-            return Auth.requireAuth();
+          currentAuth: function (Auth) {
+            return Auth.requireAuth()
           }
         }
       })
       .otherwise({
         redirectTo: '/'
-      });
-  });
+      })
+  })

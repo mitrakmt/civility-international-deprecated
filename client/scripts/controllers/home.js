@@ -1,36 +1,35 @@
+'use strict'
 
-'use strict';
-
-app.controller('HomeController', function($scope, $location) {
+app.controller('HomeController', function ($scope, $location) {
 
 
-var $animation_blocks = $('.animation-block');
-var $window = $(window);
+var $animation_blocks = $('.animation-block')
+var $window = $(window)
 
 function check_if_in_view() {
-  var window_height = $window.height();
-  var window_top_position = $window.scrollTop();
-  var window_bottom_position = (window_top_position + window_height);
+  var window_height = $window.height()
+  var window_top_position = $window.scrollTop()
+  var window_bottom_position = (window_top_position + window_height)
 
-  $.each($animation_blocks, function() {
-    var $element = $(this);
-    var element_height = $element.outerHeight();
-    var element_top_position = $element.offset().top;
-    var element_bottom_position = (element_top_position + element_height);
+  $.each($animation_blocks, function () {
+    var $element = $(this)
+    var element_height = $element.outerHeight()
+    var element_top_position = $element.offset().top
+    var element_bottom_position = (element_top_position + element_height)
 
     if ((element_bottom_position >= window_top_position) &&
         (element_top_position <= window_bottom_position)) {
-      $element.addClass('in-view');
+      $element.addClass('in-view')
     } else {
-      $element.removeClass('in-view');
+      $element.removeClass('in-view')
     }
-  });
+  })
 }
 
-$window.on('scroll resize', check_if_in_view);
-$window.trigger('scroll');
+$window.on('scroll resize', check_if_in_view)
+$window.trigger('scroll')
 
-$scope.searchChapter = '';
+$scope.searchChapter = ''
 
 
     var tabs = [
@@ -46,9 +45,9 @@ $scope.searchChapter = '';
           { title: 'Ten', content: "If you're still reading this, you should just go check out the API docs for tabs!"}
         ],
         selected = null,
-        previous = null;
-    $scope.tabs = tabs;
-    $scope.selectedIndex = 2;
+        previous = null
+    $scope.tabs = tabs
+    $scope.selectedIndex = 2
 
 
 $scope.articles = [
@@ -145,24 +144,24 @@ $scope.articles = [
 
   // Team
 
-      TweenLite.set(".cardWrapper", {perspective:800});
-      TweenLite.set(".card", {transformStyle:"preserve-3d"});
-      TweenLite.set(".back", {rotationY:-180});
-      TweenLite.set([".back", ".front"], {backfaceVisibility:"hidden"});
+      TweenLite.set(".cardWrapper", {perspective:800})
+      TweenLite.set(".card", {transformStyle:"preserve-3d"})
+      TweenLite.set(".back", {rotationY:-180})
+      TweenLite.set([".back", ".front"], {backfaceVisibility:"hidden"})
 
       $(".cardWrapper").hover(
-        function() {
-          TweenLite.to($(this).find(".card"), 1.2, {rotationY:180, ease:Back.easeOut});
+        function () {
+          TweenLite.to($(this).find(".card"), 1.2, {rotationY:180, ease:Back.easeOut})
         },
-        function() {
-          TweenLite.to($(this).find(".card"), 1.2, {rotationY:0, ease:Back.easeOut});
+        function () {
+          TweenLite.to($(this).find(".card"), 1.2, {rotationY:0, ease:Back.easeOut})
         }
       );
 
       //a nice little intro;)
-      TweenMax.staggerTo($(".card"), 1, {rotationY:-180, repeat:1, yoyo:true}, 0.1);
+      TweenMax.staggerTo($(".card"), 1, {rotationY:-180, repeat:1, yoyo:true}, 0.1)
 
-        $scope.myInterval = 3000;
+        $scope.myInterval = 3000
         $scope.slides = [
           {
             image: 'http://lorempixel.com/400/200/'
@@ -176,25 +175,25 @@ $scope.articles = [
           {
             image: 'http://lorempixel.com/400/200/people'
           }
-        ];
-});
+        ]
+})
 
-app.directive('imageonload', function() {
+app.directive('imageonload', function () {
     return {
         restrict: 'A',
 
-        link: function(scope, element) {
-          element.on('load', function() {
+        link: function (scope, element) {
+          element.on('load', function () {
             // Set visibility: true + remove spinner overlay
-              element.removeClass('spinner-hide');
-              element.addClass('spinner-show');
-              element.parent().find('span').remove();
-          });
-          scope.$watch('ngSrc', function() {
+              element.removeClass('spinner-hide')
+              element.addClass('spinner-show')
+              element.parent().find('span').remove()
+          })
+          scope.$watch('ngSrc', function () {
             // Set visibility: false + inject temporary spinner overlay
-              element.addClass('spinner-hide');
+              element.addClass('spinner-hide')
               // element.parent().append('<span class="spinner"></span>');
-          });
+          })
         }
-    };
-});
+    }
+})
