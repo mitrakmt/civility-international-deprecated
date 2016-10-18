@@ -1,0 +1,28 @@
+{
+  "name": "civility-international",
+  "version": "1.0.0",
+  "description": "The official repository of Civility International",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Mitrakos",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.15.2",
+    "co": "^4.6.0",
+    "cors": "^2.8.1",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "express-session": "^1.14.1",
+    "lodash": "^4.16.4",
+    "moment": "^2.15.1",
+    "mongodb": "^2.2.10",
+    "mongoose": "^4.6.3",
+    "morgan": "^1.7.0",
+    "request": "^2.75.0",
+    "router": "^1.1.4"
+  }
+}

@@ -1,17 +1,29 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var PORT = process.env.PORT || 3000;
+const express = require('express')
+const bodyParser = require('body-parser')
+const PORT = process.env.PORT || 2828
+const rootRouter = require('./router')
+const session = require('express-session')
+const logger = require('morgan')
+const cors = require('cors')
 
-var session = require('express-session');
+const app = express()
 
-var db = require('./app/config');
-var Users = require('./app/collections/users');
-var User = require('./app/models/user');
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
-var app = express();
+app.use(cors())
+app.use(logger('dev'))
+app.use(session({
+  secret: 'alfred the dog',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/client'))
 
-app.listen(PORT);
+app.use('/api', rootRouter)
+
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`)
+})
