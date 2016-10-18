@@ -3,7 +3,7 @@ const moment = require('moment')
 const dotenv = require('dotenv')
 
 dotenv.config()
-let dbURL = 'mongodb://' + process.env.MONGOUSERNAME + ':' + process.env.MONGOPASSWORD + '@ds021326.mlab.com:21326/alfred'
+let dbURL = 'mongodb://' + process.env.MONGOUSERNAME + ':' + process.env.MONGOPASSWORD + '@ds015690.mlab.com:15690/civilityinternational'
 let db = mongoose.connection
 mongoose.connect(dbURL)
 
